@@ -1,0 +1,25 @@
+#N canvas 639 323 450 300 10;
+#X obj 82 125 readsf~ 2;
+#X obj 82 46 openpanel;
+#X obj 82 18 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 82 207 dac~;
+#X obj 174 146 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X msg 276 21 \; pd dsp 1;
+#X msg 171 67 start;
+#X msg 171 91 stop;
+#X msg 82 76 open \$1;
+#X obj 141 177 *~;
+#X obj 82 177 *~;
+#X connect 0 0 10 0;
+#X connect 0 1 9 0;
+#X connect 1 0 8 0;
+#X connect 2 0 1 0;
+#X connect 4 0 9 1;
+#X connect 4 0 10 1;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 0;
+#X connect 9 0 3 1;
+#X connect 10 0 3 0;
