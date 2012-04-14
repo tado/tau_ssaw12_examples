@@ -1,0 +1,48 @@
+#N canvas 148 22 513 382 10;
+#X obj 89 299 output~;
+#X obj 89 110 mtof;
+#X obj 89 77 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 40 256;
+#X obj 89 145 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 82.4069 256;
+#N canvas 595 22 248 385 addosc 0;
+#X obj 23 16 inlet;
+#X obj 25 365 outlet~;
+#X obj 25 240 osc~;
+#X obj 76 238 osc~;
+#X obj 76 201 * 1.5;
+#X obj 25 285 +~;
+#X obj 25 320 *~ 0.5;
+#X obj 103 94 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 1.01 256;
+#X obj 106 72 hsl 70 20 0 3 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 2323 1;
+#X obj 102 133 t b f;
+#X obj 103 17 inlet;
+#X connect 0 0 2 0;
+#X connect 0 0 4 0;
+#X connect 2 0 5 0;
+#X connect 3 0 5 1;
+#X connect 4 0 3 0;
+#X connect 5 0 6 0;
+#X connect 6 0 1 0;
+#X connect 7 0 9 0;
+#X connect 8 0 7 0;
+#X connect 9 0 4 0;
+#X connect 9 1 4 1;
+#X connect 10 0 8 0;
+#X coords 0 -1 1 1 85 60 1 100 50;
+#X restore 88 198 pd addosc;
+#X obj 89 39 receive midi;
+#X obj 166 145 receive ratio;
+#X text 374 46 <-- set parameters;
+#X msg 282 95 \; midi 40 \; ratio 1.01 \;;
+#X msg 282 36 \; midi 60 \; ratio 1.5 \;;
+#X msg 281 154 \; midi 72 \; ratio 1.33333 \;;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 4 0 0 1;
+#X connect 5 0 2 0;
+#X connect 6 0 4 1;

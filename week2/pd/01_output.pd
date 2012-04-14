@@ -1,0 +1,16 @@
+#N canvas 756 477 453 268 10;
+#X obj 106 108 osc~ 660;
+#X obj 106 151 output~;
+#X obj 106 33 mtof;
+#X obj 106 0 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 61 256;
+#X obj 106 68 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 277.183 256;
+#X text 174 -3 MIDI note num.;
+#X text 177 66 Frequency (Hz);
+#X text 183 152 Audio output control subpatch;
+#X connect 0 0 1 0;
+#X connect 0 0 1 1;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 0 0;

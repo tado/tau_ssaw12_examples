@@ -1,0 +1,42 @@
+#N canvas 186 22 407 305 10;
+#X obj 90 226 output~;
+#X obj 90 37 mtof;
+#X obj 90 4 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 44 256;
+#X obj 90 72 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 173.826 256;
+#X text 158 1 MIDI note num.;
+#X text 161 70 Frequency (Hz);
+#X text 165 236 Audio output control subpatch;
+#N canvas 595 22 248 385 addosc 0;
+#X obj 25 50 inlet;
+#X obj 25 335 outlet~;
+#X obj 25 210 osc~;
+#X obj 76 208 osc~;
+#X obj 76 171 * 1.5;
+#X obj 25 255 +~;
+#X obj 25 290 *~ 0.5;
+#X obj 103 64 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0.73913 256;
+#X obj 106 42 hsl 70 20 0 3 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 1700 1;
+#X obj 102 103 t b f;
+#X connect 0 0 2 0;
+#X connect 0 0 4 0;
+#X connect 2 0 5 0;
+#X connect 3 0 5 1;
+#X connect 4 0 3 0;
+#X connect 5 0 6 0;
+#X connect 6 0 1 0;
+#X connect 7 0 9 0;
+#X connect 8 0 7 0;
+#X connect 9 0 4 0;
+#X connect 9 1 4 1;
+#X coords 0 -1 1 1 85 60 1 100 20;
+#X restore 89 125 pd addosc;
+#X text 185 141 Add free freq osc~;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 7 0;
+#X connect 7 0 0 0;
+#X connect 7 0 0 1;
