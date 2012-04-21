@@ -1,0 +1,24 @@
+#N canvas 614 74 618 443 10;
+#X obj 33 96 gemwin;
+#X obj 165 199 gemhead;
+#X obj 165 239 pix_image test.png;
+#X obj 165 279 pix_texture;
+#X obj 165 322 rectangle 4 3;
+#X text 28 36 create window and start rendering;
+#X text 283 238 load image;
+#X text 250 275 make image texture: copy the image into memory of GPU
+;
+#X text 260 318 apply image into rectangle;
+#X msg 33 63 create \, 1;
+#X obj 93 135 openpanel;
+#X obj 93 107 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 93 165 open \$1;
+#X text 115 105 load another image file;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 9 0 0 0;
+#X connect 10 0 12 0;
+#X connect 11 0 10 0;
+#X connect 12 0 2 0;

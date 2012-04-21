@@ -1,0 +1,53 @@
+#N canvas 515 33 568 479 10;
+#X obj 340 153 gemwin;
+#X obj -68 372 pix_texture;
+#X obj -68 402 rectangle 4 3;
+#X msg 340 66 create \, 1;
+#X obj 5 101 openpanel;
+#X obj 5 73 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 5 131 open \$1;
+#X msg 4 190 auto \$1;
+#X obj 4 164 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X text 9 370 make texture;
+#X obj -68 132 gemhead 0;
+#X obj -68 228 pix_film;
+#X text 27 68 load movie 1;
+#X text 23 161 play movie 1;
+#X obj 198 98 openpanel;
+#X obj 198 70 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 198 128 open \$1;
+#X msg 197 187 auto \$1;
+#X obj 197 161 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 125 129 gemhead 0;
+#X obj 125 225 pix_film;
+#X obj 354 126 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 350 91 destroy;
+#X text 220 65 load movie 2;
+#X text 216 158 play movie 2;
+#X text -109 12 Mix movie file example;
+#X text 10 333 difference of two movies;
+#X obj -68 336 pix_diff;
+#X connect 1 0 2 0;
+#X connect 3 0 0 0;
+#X connect 4 0 6 0;
+#X connect 5 0 4 0;
+#X connect 6 0 11 0;
+#X connect 7 0 11 0;
+#X connect 8 0 7 0;
+#X connect 10 0 11 0;
+#X connect 11 0 27 0;
+#X connect 14 0 16 0;
+#X connect 15 0 14 0;
+#X connect 16 0 20 0;
+#X connect 17 0 20 0;
+#X connect 18 0 17 0;
+#X connect 19 0 20 0;
+#X connect 20 0 27 1;
+#X connect 21 0 0 0;
+#X connect 22 0 0 0;
+#X connect 27 0 1 0;

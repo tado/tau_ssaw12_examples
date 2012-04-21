@@ -1,0 +1,32 @@
+#N canvas 331 23 487 384 10;
+#X obj 369 89 gemwin;
+#X obj 182 126 gemhead;
+#X obj 182 269 pix_texture;
+#X obj 182 312 rectangle 4 3;
+#X msg 369 56 create \, 1;
+#X obj 79 79 openpanel;
+#X obj 79 51 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 79 109 open \$1;
+#X text 101 49 load another movie file;
+#X obj 287 190 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 109 256;
+#X msg 213 189 auto \$1;
+#X obj 213 163 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 182 229 pix_film dozer.mov;
+#X text 259 267 make texture;
+#X text 347 189 frame;
+#X text 232 160 play movie;
+#X text 307 227 load movie file;
+#X text 75 11 Play movie file example;
+#X connect 1 0 12 0;
+#X connect 2 0 3 0;
+#X connect 4 0 0 0;
+#X connect 5 0 7 0;
+#X connect 6 0 5 0;
+#X connect 7 0 12 0;
+#X connect 9 0 12 1;
+#X connect 10 0 12 0;
+#X connect 11 0 10 0;
+#X connect 12 0 2 0;
